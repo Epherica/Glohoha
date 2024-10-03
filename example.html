@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" style="overscroll-behavior: none;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="build.css">
+        <title>GFX Emilico</title>
+    </head>
+    
+    <body style="overscroll-behavior: none;" class="overflow-hidden">
+        <div class="fixed top-0 left-0 w-full h-screen bg-white flex justify-center items-center flex-row gap-4 z-[999999]" id="loading">
+            <div class="w-8 h-8 rounded-full bg-yellow-500 animate-pulse" id="dotOne"></div>
+            <div class="w-8 h-8 rounded-full bg-yellow-500 animate-pulse" id="dotTwo"></div>
+            <div class="w-8 h-8 rounded-full bg-yellow-500 animate-pulse" id="dotThree"></div>
+        </div>
+        
+        <div class="relative w-full h-screen bg-yellow-200 overflow-hidden -z-0 max-md:flex" id="container">
+             <img draggable="false" src="./img/emilico.png" alt="emilico" class="max-md:self-center md:w-1/2 mx-auto animate-up">
+            <div class="floating animate-up top-8 left-2 md:top-14 md:left-24 w-48 md:w-64 flex flex-col items-start p-0 py-1 -z-10 animate-floating">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <div class="flex flex-row w-full gap-2 items-center p-1">
+                    <img draggable="false" src="./img/profile.jpg" alt="emilico" class="w-6 h-6 md:w-8 md:h-8 overflow-hidden aspect-square object-cover object-top bg-yellow-500 rounded-full">
+                    <p>Emilico Chan</p>
+                    <i class='bx bx-dots-vertical-rounded ml-auto'></i>
+                </div>
+                <div class="w-full h-40 md:h-60 overflow-hidden">
+                    <img draggable="false" src="./img/instagram.jpg" alt="instagram" class="animate-up w-full" id="imageIG">
+                </div>
+                <div class="w-full flex justify-center items-center gap-1">
+                    <button class="dot active"></button>
+                    <button class="dot"></button>
+                    <button class="dot"></button>
+                    <button class="dot"></button>
+                </div>
+                <div class="flex flex-row w-full justify-between px-1">
+                    <div>
+                        <i class="bx bxs-heart text-red-500 text-xl" onclick="this.classList.toggle('text-red-500')"></i>
+                        <i class='bx bxs-share-alt text-xl'></i>
+                        <i class='bx bx-message-square text-xl'></i>
+                    </div>
+                    <div>
+                        <i class='bx bx-bookmark text-xl'></i>
+                    </div>
+                </div>
+                <div class="px-1">
+                    <p class="text-xs">
+                        Liked By <span class="text-red-500 font-bold">Kate_Sama</span>
+                        and <span class="font-bold">other</span>
+                    </p>
+                    <p class="font-semibold text-xs">Comments...</p>
+                    <p class="text-xs font-semibold">
+                        Kate_Sama <span class="font-normal">Emilico KAAAANIII</span>
+                    </p>
+                    <p class="text-xs font-semibold">
+                        Nadila <span class="font-normal">Makhluk imuff apa ini???</span>
+                    </p>
+                </div>
+            </div>
+            <div class="floating animate-up top-3/4 md:top-24 left-1/4 flex flex-row" id="weatherContainer">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <i class="bx bx-cloud text-black text-xl"></i>
+                <p class="text-md" id="weather">...&deg;</p>
+                <p id="date" class="text-md">17 Juli 2023</p>
+            </div>
+            <div class="floating animate-up md:top-16 md:left-1/2 top-1/4 left-3/4 p-1 font-extrabold overflow-visible text-xl animate-bounce before:content-[''] before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-transparent before:border-2 before:border-white before:rounded-md before:-z-[1]">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <p class="bg-yellow-400 rounded-md p-2 flex justify-center items-center w-full h-full text-white animate-right opacity-0">Aa.
+            </p>
+            </div>
+            <div class="floating animate-up md:top-3/4 md:left-2/3 top-2/3 left-3/4 p-1 overflow-visible font-extrabold text-xl animate-bounce before:content-[''] before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-transparent before:border-2 before:border-white before:rounded-md before:-z-[1]">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <div class="bg-yellow-400 rounded-md text-white py-1 px-2 flex justify-center items-center w-full h-full">
+                    <i class='bx bxs-bell-ring animate-right opacity-0'></i>
+                </div>
+            </div>
+            <div class="floating animate-up rounded-sm top-24 md:top-1/4 left-1/2 md:left-2/3 p-2">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <button onclick="searchingGoogle()">
+                    <i class="bx bx-search text-4xl hover:text-yellow-white text-yellow-500 hover:text-white rounded-sm hover:bg-yellow-300 px-1 transition-all duration-150"></i>
+                </button>
+                <input type="text" class="w-32 outline-none rounded-sm font-semibold placeholder:text-yellow-300 tracking-widest text-yellow-500 placeholder:tracking-wider" placeholder="Emilico Lucuk" id="inputSearch">
+            </div>
+            <div class="floating animate-up top-1/2 w-max right-0 md:right-1/4 h-16 grid grid-cols-3 grid-rows-1 backdrop-blur-sm bg-opacity-50">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <img draggable="false" src="./img/1.jpg" alt="emilico" class="aspect-square opacity-0 w-full h-full rounded-md shadow-sm animate-right">
+                <img draggable="false" src="./img/2.jpg" alt="emilico" class="aspect-square opacity-0 w-full h-full rounded-md shadow-sm animate-right">
+                <img draggable="false" src="./img/3.png" alt="emilico" class="aspect-square opacity-0 w-full h-full rounded-md shadow-sm animate-right">
+            </div>
+            <div class="floating animate-up rounded-sm justify-start top-1/2 left-48 w-72 flex-wrap hidden md:flex">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <div class="flex flex-row justify-between items-center shadow-sm w-full cursor-pointer">
+                    <div class="flex flex-row justify-center items-center">
+                        <i class="bx bx-chevron-left text-3xl"></i>
+                        <p class="text-xl">Back</p>
+                    </div>
+                    <div>
+                        <i class='bx bx-dots-vertical-rounded text-3xl cursor-pointer'></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-center font-semibold tracking-wider">Personality</h1>
+                    <p class="text-sm text-justify break-keep antialiased font-medium">
+                        Emilico is cheerful and hard-working. Her top priority is taking care of her master, <span class="font-semibold text-red-500">Kate Shadow</span>
+                        , with whom she is friends. She likes making friends and spending time with them. Although she is inexperienced and clumsy at times, she is also dependable. She keeps a positive attitude and stands up for others. <span class="font-semibold text-yellow-300">Emilico</span>
+                        is curious and eager to learn new things. She enjoys cleaning in the <span class="font-semibold">Shadows House</span>
+                        and always tries to improve.
+                
+                    </p>
+                </div>
+            </div>
+            <div class="floating animate-up top-2/3 left-0 md:top-2/3 md:left-3/4 grid grid-cols-2 grid-rows-3 justify-center items-center text-center">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <a draggable="false" class="flex justify-center items-center bg-yellow-300 p-1 rounded-sm animate-right h-full overflow-hidden px-2 opacity-0" href="discord:">
+                    <i class="bx bxl-discord-alt text-xl text-white"></i>
+                </a>
+                <a draggable="false" class="flex justify-center items-center bg-yellow-300 p-1 rounded-sm animate-right h-full overflow-hidden px-2 opacity-0" href="https://m.facebook.com/story.php?story_fbid=pfbid0WGK9nSuWUxKi6pk5X2GCGgF4YJW5qH4Sv77zQvqmmDvru97RSQV5STA24D2vsHhJl&id=100011667486308&mibextid=Nif5oz">
+                    <i class="bx bxl-facebook text-xl text-white"></i>
+                </a>
+                <a draggable="false" class="flex justify-center items-center bg-yellow-300 p-1 rounded-sm animate-right h-full overflow-hidden px-2 opacity-0" href="https://instagram.com">
+                    <i class="bx bxl-instagram text-xl text-white"></i>
+                </a>
+                <a draggable="false" class="flex justify-center items-center bg-yellow-300 p-1 rounded-sm animate-right h-full overflow-hidden px-2 opacity-0" href="https://twitter.com">
+                    <i class="bx bxl-twitter text-xl text-white"></i>
+                </a>
+                <a draggable="false" class="flex justify-center items-center bg-yellow-300 p-1 rounded-sm animate-right h-full overflow-hidden px-2 opacity-0" href="https://youtube.com">
+                    <i class="bx bxl-youtube text-xl text-white"></i>
+                </a>
+                <a draggable="false" class="flex justify-center items-center bg-yellow-300 p-1 rounded-sm animate-right h-full overflow-hidden px-2 opacity-0" href="https://web.whatsapp.com">
+                    <i class="bx bxl-whatsapp text-xl text-white"></i>
+                </a>
+            </div>
+            <div class="floating animate-up max-md:hidden top-3/4 left-[40%] backdrop-blur-3xl bg-transparent shadow-none w-max flex-row rounded-full opacity-0 animate-floating">
+                <img src="./img/front.jpg" alt="Emilico TwT" class="rounded-full w-16 animate-right opacity-0">
+                <div class="animate-right opacity-0">
+                    <p class="font-semibold text-yellow-500">
+                        Emilico Lucuk Banget <i class="bx bxs-heart text-red-500"></i>
+                    </p>
+                    <p class="text-white">
+                        Nadila 2023 <sup>&copy;</sup>
+                    </p>
+                </div>
+            </div>
+            <!-- Music Player -->
+            <button class="absolute right-0 top-0 w-14 h-14 rounded-full bg-[linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('./img/music.jpg')] bg-cover bg-center bg-no-repeat m-4" onclick="document.getElementById('musicPlayer').style.display = 'flex'"></button>
+            <div class="floating animate-after-up top-0 right-0 md:m-2 max-md:h-screen w-full md:w-72 flex-col md:justify-center gap-6 p-2 rounded-sm bg-[linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('./img/music.jpg')] bg-cover bg-center bg-no-repeat text-white duration-500 transition-all origin-top-right opacity-0" id="musicPlayer" style="display: 'none'">
+                <button class="absolute top-0 left-0 w-1 h-1 bg-transparent cursor-nw-resize tl-btn"></button>
+                <button class="absolute top-0 right-0 w-1 h-1 bg-transparent cursor-ne-resize tr-btn"></button>
+                <button class="absolute bottom-0 right-0 w-1 h-1 bg-transparent cursor-nw-resize br-btn"></button>
+                <button class="absolute bottom-0 left-0 w-1 h-1 bg-transparent cursor-ne-resize bl-btn"></button>
+                <div class="flex justify-between items-center w-full px-2 max-md:absolute max-md:top-0 max-md:left-0 max-md:p-4">
+                    <i class="bx bx-chevron-left text-3xl"></i>
+                    <button onclick="document.getElementById('musicPlayer').style.display = 'none'">
+                        <i class='bx bx-x text-3xl cursor-pointer'></i>
+                    </button>
+                </div>
+                <h1 class="font-semibold">A Hollow Shadow</h1>
+                <img draggable="false" src="./img/music.jpg" alt="music" class="aspect-square object-cover rounded-full w-64 md:w-32" id="imageMusic">
+                <div class="flex md:justify-between items-center w-3/4 flex-col md:mt-4 gap-4">
+                    <div class="w-full flex gap-3 flex-wrap justify-between">
+                        <input type="range" class="w-full cursor-pointer" id="slider" value="0" step="1">
+                        <span id="start">00:00</span>
+                        <span id="end">1:30</span>
+                    </div>
+                    <div class="w-full flex justify-between items-center">
+                        <button onclick="handleRepeat()" class="hover:bg-red-500 px-2 transition-all duration-150 rounded-sm">
+                            <i class="bx bx-repeat text-2xl" id="btnRepeat"></i>
+                        </button>
+                        <button onclick="handlePlayAudio()" class="hover:bg-red-500 px-2 transition-all duration-150 rounded-sm">
+                            <i class="bx bx-play text-4xl" id="btnPlay"></i>
+                        </button>
+                        <button onclick="handleMute()" class="hover:bg-red-500 px-2 transition-all duration-150 rounded-sm">
+                            <i class="bx bx-volume-full text-2xl" id="btnVol"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-t-2 border-t-white absolute left-1/2 bottom-20 md:bottom-4 -translate-x-1/2 -translate-y-1/2 w-1/2">
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="script.js" defer></script>
+        <script src="music.js" defer></script>
+        <script src="drag.js" defer></script>
+        <script src="resizing.js" defer></script>
+        <script src="gsap.js" defer></script>
+    </body>
+
+</html>

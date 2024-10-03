@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irene | Arknight</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-primary -z-50 bg-[linear-gradient(to_top,rgba(24,24,24,1),rgba(24,24,24,.5)),url('/img/irene2.png')] bg-no-repeat bg-[48%_35%] md:bg-[100%_30%]">
+    <div id="loading" class="fixed w-full h-full bg-primary z-50 flex justify-center items-center text-white flex-col">
+        <img src="/img/logo_iberia.png" alt="" class="animate-pulse">
+        <button id="startBtn" onclick="removeLoader()" class="hidden border border-white bg-[#555555] text-white font-butler font-extralight px-12 py-2 tracking-wider">START</button>
+        <p class="text-7xl tracking-widest animate-pulse">...</p>
+    </div>
+    <div id="header" class="w-full fixed flex flex-row justify-between items-center px-2 max-md:p-2 md:px-8 z-10">
+        <img src="/img/logochinese.png" alt="arknight logo" class="w-12 md:w-36 pop-up">
+        <div class="flex flex-row gap-4 md:gap-12 text-white justify-center items-center">
+            <button onclick="scrollInto('ireneSection')" class="pop-up max-md:hidden font-medium text-xs md:text-sm tracking-wider line">Irene</button>
+            <button onclick="scrollInto('characterSection')" class="pop-up max-md:hidden font-medium text-xs md:text-sm tracking-wider line">Character</button>
+            <a href="https://play.google.com/store/apps/details?id=com.YoStarEN.Arknights" target="_blank" class="pop-up font-medium text-xs md:text-sm tracking-wider border border-hair hover:bg-hair hover:text-black transition-colors duration-150 px-4 py-2">Download</a>
+        </div>
+    </div>
+    <nav id="nav" class="hidden fixed top-0 left-0 w-full h-full flex flex-col gap-12 justify-center items-center z-40 bg-primary/75" onclick="this.classList.toggle('hidden'); document.getElementById('iconMenu').classList.toggle('bx-play')">
+        <button onclick="scrollInto('ireneSection')" class="peer/irene font-medium text-xl text-hair w-max tracking-wider line">Irene</button>
+        <img src="/img/irene2.png" alt="" class="opacity-0 peer-hover/irene:opacity-100 brightness-50 peer-hover/irene:-translate-y-1/2 duration-500 ease-out transition-transform absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 -z-10">
+        <button onclick="scrollInto('characterSection')" class="peer/character font-medium text-xl text-hair w-max tracking-wider line">Character</button>
+        <img src="/img/skin.png" alt="" class="opacity-0 peer-hover/character:opacity-100 brightness-50 peer-hover/character:-translate-y-1/2 duration-500 ease-out transition-transform absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 -z-10">
+    </nav>
+    <main class="w-full h-[100dvh] flex flex-row flex-nowrap snap-x snap-mandatory scroll-smooth overflow-y-hidden overflow-x-auto" id="container">
+        <section class="section flex justify-center items-center" id="ireneSection">
+            <div id="ireneContainer" class="flex justify-center items-center">
+                <img id="character" src="/img/irene2.png" alt="" class="pop-up w-full max-md:scale-150 md:w-2/3 lg:w-1/2">
+            </div>
+            <div id="star" class="pop-up absolute max-md:p-12 bottom-44 md:bottom-24 flex text-center flex-row gap-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #E2E1D9; rotate: 20deg;"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #E2E1D9; rotate: 20deg;"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #E2E1D9; rotate: 20deg;"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #E2E1D9; rotate: 20deg;"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #E2E1D9; rotate: 20deg;"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #E2E1D9; rotate: 20deg;"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+            </div>
+            <div class="absolute max-md:p-12 max-md:translate-y-52 md:bottom-0 flex flex-col text-center">
+                <h1 class="pop-up font-black font-butler text-4xl text-hair">IRENE</h1>
+                <p class="max-md:hidden pop-up font-medium text-hair tracking-wider text-xs">Inquisition Messenger Irene, fighting to protect Iberia's coastline.</p>
+                <p class="pop-up font-medium text-hair tracking-wider text-xs">Pierce through our night, your keenest sword. Light forth our way, ye lantern ward!</p>
+            </div>
+            <div class="absolute flex flex-col justify-between w-full h-[calc(100%-4rem)] md:h-[calc(100%-12rem)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4">
+                <div class="w-full flex justify-between items-center">
+                    <div class="pop-up flex justify-center items-center flex-col text-white text-xs gap-2">
+                        <img src="/img/class_guard.png" alt="" class="w-12">
+                        <p>Guard</p>
+                    </div>
+                    <div class="pop-up flex justify-center items-center flex-col text-white text-xs gap-2">
+                        <img src="/img/sub_sword_icon.png" alt="" class="w-12">
+                        <p>Swordmaster</p>
+                    </div>
+                </div>
+                <div class="w-full flex justify-between items-center">
+                    <div class="flex flex-row">
+                        <button class="pop-up" onclick="changeSkin(0)">
+                            <img src="/img/E.png" alt="" class="w-12 hover:-translate-y-4 duration-150 transition-transform">
+                        </button>
+                        <button class="pop-up" onclick="changeSkin(1)">
+                            <img src="/img/E1.png" alt="" class="w-12 hover:-translate-y-4 duration-150 transition-transform">
+                        </button>
+                        <button class="pop-up" onclick="changeSkin(2)">
+                            <img src="/img/E2.png" alt="" class="w-12 hover:-translate-y-4 duration-150 transition-transform">
+                        </button>
+                    </div>
+                    <button class="pop-up" onclick="changeSkin(3)">
+                        <img src="/img/icon.png" alt="" class="w-12 hover:-translate-y-4 duration-150 transition-transform">
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="section flex flex-row justify-center items-center" id="characterSection">
+            <div class="max-md:hidden absolute top-1/2 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white blur-[10rem]"></div>
+            <div id="characterContainer" class="w-full flex justify-center items-center">
+                <img src="/img/skin.png" alt="" class="w-full md:w-1/2">
+            </div>
+            <div class="w-full flex flex-col justify-between absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[calc(100%-8rem)] p-2 md:p-8">
+                <div class="flex flex-row justify-between text-hair">
+                    <div class="max-md:text-[8px] w-24 md:w-48 flex flex-col gap-2">
+                        <p class="bg-hair w-max px-2 text-black font-medium font-butler pop-up">Attributes</p>
+                        <p class="pop-up">Lvl. 90</p>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-col gap-1 pop-up">
+                                <div class="flex flex-row justify-between items-center gap-2">
+                                    <div class="flex flex-row gap-1 items-center">
+                                        <i class="bx bxs-heart"></i>
+                                        <p>HP</p>
+                                    </div>
+                                    <p>
+                                        2935
+                                    </p>
+                                </div>
+                                <div class="w-full relative">
+                                    <div class="w-full bg-hair/50 h-1"></div>
+                                    <div class="w-1/2 absolute top-0 left-0 bg-animate h-1"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 pop-up">
+                                <div class="flex flex-row justify-between items-center gap-2">
+                                    <div class="flex flex-row gap-1 items-center">
+                                        <i class="bx bx-knife"></i>
+                                        <p>Attack</p>
+                                    </div>
+                                    <p>
+                                        766
+                                    </p>
+                                </div>
+                                <div class="w-full relative">
+                                    <div class="w-full bg-hair/50 h-1"></div>
+                                    <div class="w-1/3 absolute top-0 left-0 bg-animate h-1"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 pop-up">
+                                <div class="flex flex-row justify-between items-center gap-2">
+                                    <div class="flex flex-row gap-1 items-center">
+                                        <i class="bx bxs-shield"></i>
+                                        <p>DEF</p>
+                                    </div>
+                                    <p>
+                                        419
+                                    </p>
+                                </div>
+                                <div class="w-full relative">
+                                    <div class="w-full bg-hair/50 h-1"></div>
+                                    <div class="w-2/5 absolute top-0 left-0 bg-animate h-1"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <img src="/img/class_guard.png" alt="" class="pop-up w-6 md:w-10">
+                                <img src="/img/E2.png" alt="" class="pop-up w-6 md:w-10">
+                                <img src="/img/module.png" alt="" class="pop-up w-6 md:w-10">
+                                <img src="/img/icon.png" alt="" class="pop-up w-6 md:w-10">
+                            </div>
+                            <div class="pop-up w-full flex justify-center items-center flex-row gap-2">
+                                <div class="w-full h-full md:p-2 p-1 bg-primary/50 flex flex-col gap-1">
+                                    <div class="flex flex-row justify-center items-center gap-[1px]">
+                                        <div class="w-2 h-2 md:w-3 md:h-3 bg-hair"></div>
+                                        <div class="w-2 h-2 md:w-3 md:h-3 border-2 border-hair"></div>
+                                    </div>
+                                    <p class="whitespace-nowrap text-[8px] md:text-xs">Attack Range</p>
+                                </div>
+                                <div class="w-full h-full md:p-2 p-1 bg-primary/50 flex justify-center items-center flex-col">
+                                    <p>Melee</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <img src="/img/logo_iberia.png" alt="" class="pop-up w-20">
+                        <div id="star" class="flex flex-row pop-up">
+                            <i class="bx bxs-star text-hair rotate-[20deg] text-sm md:text-2xl"></i>
+                            <i class="bx bxs-star text-hair rotate-[20deg] text-sm md:text-2xl"></i>
+                            <i class="bx bxs-star text-hair rotate-[20deg] text-sm md:text-2xl"></i>
+                            <i class="bx bxs-star text-hair rotate-[20deg] text-sm md:text-2xl"></i>
+                            <i class="bx bxs-star text-hair rotate-[20deg] text-sm md:text-2xl"></i>
+                            <i class="bx bxs-star text-hair rotate-[20deg] text-sm md:text-2xl"></i>
+                        </div>
+                        <div class="text-[8px] md:text-sm self-start w-full">
+                            <p class="bg-hair w-max px-2 text-black font-medium font-butler pop-up">Profile</p>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>Artist</p>
+                                <a href="https://gamepress.gg/arknights/taxonomy/term/3791" target="_blank" class="font-semibold">aZLing4</a>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>JP</p>
+                                <a href="https://myanimelist.net/people/8/Rie_Kugimiya" target="_blank" class="font-semibold">Kugiyama Rie</a>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>CN</p>
+                                <a href="https://gamepress.gg/arknights/taxonomy/term/15351" target="_blank" class="font-semibold">刘雯</a>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>Gender</p>
+                                <p class="font-semibold">Female</p>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>Birth</p>
+                                <p class="font-semibold">Iberia</p>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>Birthday</p>
+                                <p class="font-semibold">3 Jan</p>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>Race</p>
+                                <p class="font-semibold">Liberi</p>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>Height</p>
+                                <p class="font-semibold">156cm</p>
+                            </div>
+                            <div class="pop-up flex flex-row justify-between w-full">
+                                <p>Experience</p>
+                                <p class="font-semibold">5 Years</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex flex-row justify-between self-end gap-4">
+                    <div class="flex flex-col gap-2">
+                        <p class="pop-up bg-hair px-2 font-medium font-butler">Talents</p>
+                        <p class="pop-up p-2 bg-primary/50 text-[8px] md:text-sm text-hair text-center targetBar" id="talent1">Flame of Castigation</p>
+                        <p class="pop-up p-2 bg-primary/50 text-[8px] md:text-sm text-hair text-center targetBar" id="talent2">Sword of Cleaning</p>
+                    </div>
+                    <p class="max-md:hidden italic text-xs text-center text-hair font-medium p-2 self-end">Hm... Are these all your Operators? Is it just me or do some of them seem like an actual security risk? Alright, fine. I will try my best to focus on their combat techniques….</p>
+                    <div class="flex shrink-0 flex-col gap-2">
+                        <p class="pop-up bg-hair px-2 font-medium font-butler">Skill</p>
+                        <div class="flex flex-row gap-2">
+                            <div class="pop-up">
+                                <img src="/img/S1.png" alt="" id="s1" class="skill targetBar">
+                            </div>
+                            <div class="pop-up">
+                                <img src="/img/S2.png" alt="" id="s2" class="skill targetBar">
+                            </div>
+                            <div class="pop-up">
+                                <img src="/img/S3.png" alt="" id="s3" class="skill targetBar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="talent1bar" class="bar absolute text-hair w-52 bg-primary/50 backdrop-blur-sm p-2 rounded-sm flex flex-col justify-start gap-2">
+                <p class="text-xs tracking-wider break-keep">Physical damage has a <span class="important">50%</span> chance to ignore <span class="important">50%</span> DEF. Chance increases to <span class="important">100%</span> against aerial units.</p>
+            </div>
+            <div id="talent2bar" class="bar absolute text-hair w-60 bg-primary/50 backdrop-blur-sm p-2 rounded-sm flex flex-col justify-start gap-2">
+                <p class="text-xs tracking-wider break-keep"> ASPD <span class="important">+24</span>. Effect doubles when there are <span class="important">[Sea Monster]</span> enemies on the battlefield.</p>
+            </div>
+            <div id="s1bar" class="bar absolute text-hair w-60 bg-primary/50 backdrop-blur-sm p-2 rounded-sm flex flex-col justify-start gap-2">
+                <div class="flex flex-row gap-2 justify-between items-center">
+                    <div class="flex flex-row gap-2 items-center">
+                        <img src="/img/S1.png" alt="" class="w-8 md:w-14">
+                        <p>Gust</p>
+                    </div>
+                    <img src="/img/E3.png" alt="" class="w-8 md:w-14">
+                </div>
+                <div class="text-xs flex flex-row justify-between items-center gap-2">
+                    <p class="bg-[#F2763A] px-2 py-1">Offensive Recovery</p>
+                    <p>Manual</p>
+                    <p>SP 3</p>
+                </div>
+                <p class="text-xs break-keep tracking-wider">
+                    The next attack deals <span class="important">200%</span> ATK as Physical damage, and causes the target to <span class="underline">Levitate</span> 1 second, then deals <span class="important">200%</span> ATK as Physical damage to it again
+                </p>
+            </div>
+            <div id="s2bar" class="bar absolute text-hair w-60 bg-primary/50 backdrop-blur-sm p-2 rounded-sm flex flex-col justify-start gap-2">
+                <div class="flex flex-row gap-2 justify-between items-center">
+                    <div class="flex flex-row gap-2 items-center">
+                        <img src="/img/S2.png" alt="" class="w-8 md:w-14">
+                        <p>Shattertide</p>
+                    </div>
+                    <img src="/img/E3.png" alt="" class="w-8 md:w-14">
+                </div>
+                <div class="text-xs flex flex-row justify-between items-center gap-2">
+                    <p class="bg-[#F2763A] px-2 py-1">Offensive Recovery</p>
+                    <p>Manual</p>
+                    <p>SP 8</p>
+                </div>
+                <p class="text-xs break-keep tracking-wider">
+                    Deal <span class="important">400%</span> ATK as Physical damage to up to <span class="important">6</span> ground enemies in front, and cause targets with 3 or less Weight to Levitate <span class="important">4</span> seconds
+                </p>
+                <p class="text-[#F2763A] font-medium text-xs">Can store 2 charges</p>
+            </div>
+            <div id="s3bar" class="bar absolute text-hair w-60 bg-primary/50 backdrop-blur-sm p-2 rounded-sm flex flex-col justify-start gap-2">
+                <div class="flex flex-row gap-2 justify-between items-center">
+                    <div class="flex flex-row gap-2 items-center">
+                        <img src="/img/S3.png" alt="" class="w-8 md:w-14">
+                        <p>Judgment</p>
+                    </div>
+                    <img src="/img/E3.png" alt="" class="w-8 md:w-14">
+                </div>
+                <div class="text-xs flex flex-row justify-between items-center gap-2">
+                    <p class="bg-[#F2763A] px-2 py-1">Offensive Recovery</p>
+                    <p>Manual</p>
+                    <p>SP 24</p>
+                </div>
+                <p class="text-xs break-keep tracking-wider">
+                    Deal <span class="important">300%</span> ATK as Physical damage to all nearby ground enemies, and cause them to Levitate <span class="important">4</span> seconds, then bombard <span class="important">12</span> times, each hit dealing <span class="important">250%</span> ATK as Physical damage to all enemies in a small area around a random target
+                </p>
+            </div>
+        </section>
+        <section class="section flex justify-center items-center flex-col text-hair" id="endSection">
+            <img src="/img/rhodesisland.webp" alt="" class="w-60 md:w-96 pop-up">
+            <p class="pop-up">Created By</p>
+            <a href="https://web.facebook.com/photo?fbid=2114347248964171&set=a.109928116072771" target="_blank" class="font-semibold underline pop-up">Nadila Vira Gabriella</a>
+        </section>
+    </main>
+    <div class="fixed bottom-0 left-0 w-full flex justify-between items-center p-2">
+        <img src="/img/logo2.png" alt="" class="w-16">
+        <!-- <div class="relative">
+            <svg width="24px" height="32px">
+                <path d="M 12 2 L 2 16 L 12 30 L 22 16 L 12 2 Z" class="fill-hair" stroke="transparent"></path>
+            </svg>
+            <svg class="absolute top-1/2 bg-transparent left-1/2 -translate-x-1/2 -translate-y-1/2" width="30px" height="38px" viewBox="0 0 30 38">
+                <path d="M 15 2 L 2 19 L 15 36 L 28 19 L 15 2 Z" class="stroke-hair" fill="transparent" stroke-width="2px"></path>
+            </svg>
+        </div> -->
+        <img src="/img/yostar.png" alt="" class="w-16">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
